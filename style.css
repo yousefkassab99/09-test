@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.hide-scrollbar {
+    width: 50px;
+    height: 100vh;
+    background-color:  #F9FAFB;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+body {
+    background:  #F9FAFB;
+}
+.title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 87px;
+    text-align: center;
+    color: #E2E8F0;
+    margin: 35px;
+}
+.todo {
+    order: 1;
+    background-color: #fff;
+    padding: 26px 34px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 34px;
+    width: 80%;
+    max-width: 450px;
+    margin: 0 auto 34px;
+}
+.todos {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+.todo .todos-title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 12px;
+    color: #374151;
+}
+.todo .todo-content {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6B7280;
+    max-height: calc(19px * 2);
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+.plus {
+    background: linear-gradient(180deg, rgba(249, 250, 251, 0) 0%, #F9FAFB 47.81%);
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 34px;
+}
+.ticket {
+    background-color: #fff;
+    padding: 28px 36px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 9px;
+    padding-bottom: 76px;
+}
+.active {
+    display: none;
+    width: 80%;
+    max-width: 460px;
+    margin: 0 auto 35px;
+    order: 3;
+}
+input,textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #F3F3F6;
+    border-radius: 5px;
+    outline: 2px solid transparent;
+    color: #6B7280;
+    margin-top: 14px;
+    transition: outline 0.4s ease-in-out;
+}
+textarea {
+    height: 100px;
+}
+#btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-top: 60px;
+    gap: 17px;
+}
