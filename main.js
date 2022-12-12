@@ -13,10 +13,10 @@ const xhr = new XMLHttpRequest();
 xhr.onreadystatechange = () => {
     if (xhr.readyState === 4 && xhr.status === 200) {
         JSON.parse(xhr.response);
-        const todosArray = JSON.parse(xhr.response).map(el => {
+        const todosArray = JSON.parse(xhr.response).map(e => {
             return {
-                title: el.title,
-                desc: el.body
+                title: e.title,
+                desc: e.body
             }
         });
         showArrayOfTodos(todosArray);
@@ -25,12 +25,11 @@ xhr.onreadystatechange = () => {
 
 
 
-const showArrayOfTodos = (arr) => {
-    arr.forEach(todo => {
+const showArrayOfTodos = (array) => {
+    array.forEach(todo => {
         todos.appendChild(createTodoticket(todo.title, todo.desc))
     });
 }
-
 const createTodoticket = (title, desc) => {
     const todo = document.createElement('div');
     todo.classList.add("todo");
@@ -38,7 +37,7 @@ const createTodoticket = (title, desc) => {
         <h2 class="todos-title">${title}</h2>
         <p class="todo-content">${desc}</p>
 `
-    return todo
+ return todo
 }
 
 xhr.open("GET", "https://jsonplaceholder.typicode.com/posts");
@@ -57,8 +56,8 @@ falseBtn.addEventListener('click', () => {
 });
 
 trueBtn.addEventListener('click', () => {
-    const title = titleInput.value;
     const desc = descInput.value;
+    const title = titleInput.value;
     if (title === "") {
         titleInput.style = 'outline: 2px solid #f00;'
     } else {
@@ -83,9 +82,10 @@ trueBtn.addEventListener('click', () => {
             todos.scrollTo(0, todos.scrollHeight);
             titleInput.value = ""
             descInput.value = ""
+            active.style = 'display: none';
             todos.style = 'padding-bottom: 120px;';
             plus.style = 'display: flex';
-            active.style = 'display: none';
+            
         })
     }
 });
